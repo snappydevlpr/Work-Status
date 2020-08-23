@@ -1,26 +1,45 @@
 import unicornhathd
 
-print(""" I am currently busy
 
-Please wait until this turns green to make contact.
+def busy_status():
+    print(""" I am currently busy
 
-Thank you.
-""")
+    Please wait until this turns green to make contact.
 
-unicornhathd.brightness(.6)
+    Thank you.
+    """)
 
-unicornhathd.clear()
+    unicornhathd.clear()
+    unicornhathd.brightness(.6)
 
-for xValue in range(0,15):
-    for yValue in range(0,15):
-        unicornhathd.set_pixel(xValue,yValue,255,0,0)
+    for xValue in range(0,15):
+        for yValue in range(0,15):
+            unicornhathd.set_pixel(xValue,yValue,255,0,0)
 
-unicornhathd.brightness(.6)
 
-try:
-    while True:
-        unicornhathd.show()
+    try:
+        while True:
+            unicornhathd.show()
 
-except KeyboardInterrupt:
-    print("error")
-    unicornhathd.off()
+    except KeyboardInterrupt:
+        print("error")
+        unicornhathd.off()
+
+def available_status():
+     print(""" I am currently available
+    Feel free to enter. :) """)
+
+    unicornhathd.clear()
+    unicornhathd.brightness(.6)
+
+    for xValue in range(0,15):
+        for yValue in range(0,15):
+            unicornhathd.set_pixel(xValue,yValue,0,255,0)
+
+    try:
+        while True:
+            unicornhathd.show()
+
+    except KeyboardInterrupt:
+        print("error")
+        unicornhathd.off()
