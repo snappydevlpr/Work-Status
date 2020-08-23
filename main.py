@@ -44,7 +44,7 @@ def available_status():
 def print_status(myStatusText, r, g, b):
     TEXT = myStatusText
 
-    FONT = ('/usr/share/fonts/true/type/freefont/FreeSansBold.ttf'.12)
+    FONT = ('/usr/share/fonts/true/type/freefont/FreeSansBold.ttf',12)
 
     width, height = unicornhathd.get_shape()
 
