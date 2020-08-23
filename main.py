@@ -56,7 +56,7 @@ def print_status(myStatusText, r, g, b):
     
     font_file, font_size = FONT
 
-    font = ImageFont.truetype(font_file. font_size)
+    font = ImageFont.truetype(font_file, font_size)
     text_widt, text_height = font.getsize(TEXT)
 
     text_width += width + text_x
