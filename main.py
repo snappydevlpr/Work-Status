@@ -13,7 +13,7 @@ unicornhathd.clear()
 
 for xValue in range(0,15):
     for yValue in range(0,15):
-        unicornhathd.set(xValue,yValue,255,0,0)
+        unicornhathd.set_pixel(xValue,yValue,255,0,0)
 
 unicornhathd.brightness(.6)
 
