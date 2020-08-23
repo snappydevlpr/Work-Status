@@ -9,18 +9,20 @@ def busy_status():
     unicornhathd.clear()
     unicornhathd.brightness(.6)
 
-    for xValue in range(0,15):
-        for yValue in range(0,15):
-            unicornhathd.set_pixel(xValue,yValue,255,0,0)
+    # for xValue in range(0,15):
+    #     for yValue in range(0,15):
+    #         unicornhathd.set_pixel(xValue,yValue,255,0,0)
 
 
     try:
         while True:
-            unicornhathd.show()
-            time.sleep(2)
-            unicornhathd.off()
+            # unicornhathd.show()
+            # time.sleep(2)
+            # unicornhathd.clear()
+            # unicornhathd.off()
             print_status(text, 255, 0, 0)
-            time.sleep(4)
+            # unicornhathd.clear()
+            # time.sleep(4)
 
     except KeyboardInterrupt:
         print("error")
