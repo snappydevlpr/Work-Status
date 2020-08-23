@@ -17,9 +17,11 @@ def busy_status():
     try:
         while True:
             unicornhathd.show()
-            time.sleep(.02)
+            time.sleep(2)
             unicornhathd.off()
             print_status(text, 255, 0, 0)
+            time.sleep(4)
+
     except KeyboardInterrupt:
         print("error")
         unicornhathd.off()
