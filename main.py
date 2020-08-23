@@ -61,7 +61,7 @@ def print_status(myStatusText, r, g, b):
 
     text_width += width + text_x
 
-    image = Image.new('RGB', (text_width, max(height, text_height)). (0,0,0))
+    image = Image.new('RGB', (text_width, max(height, text_height)), (0,0,0))
 
     draw = ImageDraw.Draw(image)
 
