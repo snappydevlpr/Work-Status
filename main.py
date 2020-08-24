@@ -12,16 +12,16 @@ def busy_status():
 
     try:
         while True:
-	    for xValue in range(0,15):
-	        for yValue in range(0,15):
-                    unicornhathd.set_pixel(xValue,yValue,255,0,0)
+            for xValue in range(0,15):
+                for yValue in range(0,15):
+                        unicornhathd.set_pixel(xValue,yValue,255,0,0)
             unicornhathd.show()
-            time.sleep(2)
+            time.sleep(4)
             unicornhathd.clear()
             unicornhathd.off()
             print_status(text, 255, 0, 0)
             unicornhathd.clear()
-            time.sleep(4)
+            time.sleep(2)
 
     except KeyboardInterrupt:
         print("error")
@@ -38,7 +38,16 @@ def available_status():
 
     try:
         while True:
+            for xValue in range(0,15):
+            for yValue in range(0,15):
+                    unicornhathd.set_pixel(xValue,yValue,0,255,0)
             unicornhathd.show()
+            time.sleep(4)
+            unicornhathd.clear()
+            unicornhathd.off()
+            print_status(text, 255, 0, 0)
+            unicornhathd.clear()
+            time.sleep(2)
 
     except KeyboardInterrupt:
         print("error")
@@ -138,7 +147,8 @@ def print_status(myStatusText, r, g, b):
                 b = int(bb * b)
 
                 # Finally we colour in our finished pixel on Unicorn HAT HD
-                unicornhathd.set_pixel(width - 1 - x, y, r, g, b)
+                # unicornhathd.set_pixel(width - 1 - x, y, r, g, b)
+                unicornhathd.set_pixel(width - 1 - x, y, 255, 0, 0)
 
         # Finally, for each step in our scroll, we show the result on Unicorn HAT HD
         unicornhathd.show()
