@@ -59,7 +59,7 @@ def print_status(myStatusText, r, g, b):
     text_x = 1
     text_y = 2
     
-    font_file, font_size = FONT
+    font_file,font_size = FONT
 
     font = ImageFont.truetype(font_file, font_size)
     text_width, text_height = font.getsize(TEXT)
@@ -69,14 +69,10 @@ def print_status(myStatusText, r, g, b):
     image = Image.new('RGB', (text_width, max(height, text_height)), (0,0,0))
 
     draw = ImageDraw.Draw(image)
-
+    draw.text((text_x,text_y), TEXT, fill=(r,g,b), font=font)
     for scroll in range(text_width - width):
         for x in range(width):
             for y in range(height):
-                pixel = image.getpixel((x + scroll, y))
-
-                unicornhathd.set_pixel(width-1-x, y,r,g,b)
-
         unicornhathd.show()
 
         time.sleep(0.02)
