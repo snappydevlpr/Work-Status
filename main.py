@@ -80,4 +80,4 @@ def print_status(myStatusText, r, g, b):
         unicornhathd.off()
     
 # busy_status()
-unicornhathd.set_pixel(xValue,yValue,0,255,0)
+print_status(" I am currently available Feel free to enter. :) ", 255, 0, 0)
