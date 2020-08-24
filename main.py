@@ -1,35 +1,34 @@
+import colorsys
 import unicornhathd
 import time
 from PIL import Image, ImageDraw, ImageFont
 
 def busy_status():
 
-    text = " I am currently available Feel free to enter. :) "
+    text = "Busy try again later...  :( "
 
     unicornhathd.clear()
     unicornhathd.brightness(.6)
 
-    # for xValue in range(0,15):
-    #     for yValue in range(0,15):
-    #         unicornhathd.set_pixel(xValue,yValue,255,0,0)
-
-
     try:
         while True:
-            # unicornhathd.show()
-            # time.sleep(2)
-            # unicornhathd.clear()
-            # unicornhathd.off()
+	    for xValue in range(0,15):
+	        for yValue in range(0,15):
+                    unicornhathd.set_pixel(xValue,yValue,255,0,0)
+            unicornhathd.show()
+            time.sleep(2)
+            unicornhathd.clear()
+            unicornhathd.off()
             print_status(text, 255, 0, 0)
-            # unicornhathd.clear()
-            # time.sleep(4)
+            unicornhathd.clear()
+            time.sleep(4)
 
     except KeyboardInterrupt:
         print("error")
         unicornhathd.off()
 
 def available_status():
-    
+    text = "I am currently available. Feel freeto enter :)" 
     unicornhathd.clear()
     unicornhathd.brightness(.6)
 
@@ -127,16 +126,16 @@ def print_status(myStatusText, r, g, b):
 
                 # Now we want to turn the colour of our text - shades of grey remember - into a mask for our rainbow.
                 # We do this by dividing it by 255, which converts it to the range 0.0 to 1.0
-                # r, g, b = [float(n / 255.0) for n in pixel]
+                r, g, b = [float(n / 255.0) for n in pixel]
 
                 # We can now use our 0.0 to 1.0 range to scale our three colour values, controlling the amount
                 # of rainbow that gets blended in.
                 # 0.0 would blend no rainbow
                 # 1.0 would blend 100% rainbow
                 # and anything in between would copy the anti-aliased edges from our text
-                # r = int(br * r)
-                # g = int(bg * g)
-                # b = int(bb * b)
+                r = int(br * r)
+                g = int(bg * g)
+                b = int(bb * b)
 
                 # Finally we colour in our finished pixel on Unicorn HAT HD
                 unicornhathd.set_pixel(width - 1 - x, y, r, g, b)
@@ -151,4 +150,4 @@ def print_status(myStatusText, r, g, b):
 
 
 # busy_status()
-print_status(" I am currently available Feel free to enter. :) ", 255, 0, 0)
+busy_status()
