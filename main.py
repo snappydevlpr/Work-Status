@@ -71,8 +71,9 @@ def print_status(myStatusText, r, g, b):
     draw = ImageDraw.Draw(image)
     draw.text((text_x,text_y), TEXT, fill=(r,g,b), font=font)
     for scroll in range(text_width - width):
-        for x in range(width):
-            for y in range(height):
+        # for x in range(width):
+        #     for y in range(height):
+        #         pass
         unicornhathd.show()
 
         time.sleep(0.02)
