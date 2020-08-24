@@ -39,7 +39,7 @@ def available_status():
     try:
         while True:
             for xValue in range(0,15):
-            for yValue in range(0,15):
+                for yValue in range(0,15):
                     unicornhathd.set_pixel(xValue,yValue,0,255,0)
             unicornhathd.show()
             time.sleep(4)
@@ -54,7 +54,7 @@ def available_status():
         unicornhathd.off()
 
 
-def print_status(myStatusText, r, g, b):
+def print_status(myStatusText, br, bg, bb):
     TEXT = myStatusText
     FONT = ('/usr/share/fonts/truetype/freefont/FreeSansBold.ttf', 12)
 
@@ -122,7 +122,7 @@ def print_status(myStatusText, r, g, b):
             # This list comprehension is just a tidy way of converting the range 0.0 to 1.0
             # that hsv_to_rgb returns into integers in the range 0-255.
             # hsv_to_rgb returns a tuple of (r, g, b)
-            br, bg, bb = [int(n * 255) for n in colorsys.hsv_to_rgb(hue, 1.0, 1.0)]
+            # br, bg, bb = [int(n * 255) for n in colorsys.hsv_to_rgb(hue, 1.0, 1.0)]
 
             # Since our rainbow runs from left to right along the x axis, we can calculate it once
             # for every vertical line on the display, and then re-use that value 16 times below:
@@ -147,8 +147,7 @@ def print_status(myStatusText, r, g, b):
                 b = int(bb * b)
 
                 # Finally we colour in our finished pixel on Unicorn HAT HD
-                # unicornhathd.set_pixel(width - 1 - x, y, r, g, b)
-                unicornhathd.set_pixel(width - 1 - x, y, 255, 0, 0)
+                unicornhathd.set_pixel(width - 1 - x, y, r, g, b)
 
         # Finally, for each step in our scroll, we show the result on Unicorn HAT HD
         unicornhathd.show()
