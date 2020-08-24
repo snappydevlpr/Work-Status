@@ -47,8 +47,7 @@ def available_status():
 
 
 def print_status(myStatusText, r, g, b):
-   TEXT = myStatusText
-
+    TEXT = myStatusText
     FONT = ('/usr/share/fonts/truetype/freefont/FreeSansBold.ttf', 12)
 
     # Use `fc-list` to show a list of installed fonts on your system,
