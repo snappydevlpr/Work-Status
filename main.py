@@ -78,4 +78,5 @@ def print_status(myStatusText, r, g, b):
         time.sleep(0.02)
         unicornhathd.off()
     
-busy_status()
+# busy_status()
+unicornhathd.set_pixel(xValue,yValue,0,255,0)
